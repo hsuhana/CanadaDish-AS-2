@@ -1,0 +1,50 @@
+﻿@* 
+Please check:
+Link: https://learn.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/page?view=aspnetcore-7.0&tabs=visual-studio#the--directive 
+*@
+
+@* @page => This is just a razor page using the @ sign "The Transition Character": *@
+@page
+
+@*
+@model => specify the "Model Type"" for this "Index" page
+using the "IndexModel" model class
+The "IndexModel" class is created inside its corresponding .cs file 
+which is inside "index.cshtml.cs" => open and check the file :-)
+*@
+@model IndexModel
+@* The script block for C# *@
+@{
+    // 1. using a dictionary object called "ViewData"
+    // 2. using the ViewData dictionary element with the id of "Title" 
+    // 3. assign the string value of "Home page" to that item "Title
+    // 4. In the runtime, the string "Home page" will be the document title in the browser tab
+    /*
+     * IMPORTANT NOTES:
+     * ***************
+     * > The "ViewData" dictionary is a dynamic object, which means any type can be used. 
+     * > The ViewData object has no defined properties until something is added
+     */
+    ViewData["Title"] = "Home page";
+
+    /*
+     * Let's work with date and time in C#:
+     * to calcualte how long ASP.NET was running:
+     * The current date (now) - the released date
+     * Initial release: January 5, 2002; 21 years ago
+     * Link: https://en.wikipedia.org/wiki/ASP.NET
+     
+     * Defining a varaible "aspYears" Using TimeSpane class
+     * DateTime(YYYY, MM, DD)
+    */
+    TimeSpan aspYears = DateTime.Now - new DateTime(2002, 1, 5);
+}
+
+<div class="text-center">
+    <!-- modify the contents -->
+    <h1 class="display-4">Welcome Our Website!!!</h1>
+</div>
+
+
+
+
